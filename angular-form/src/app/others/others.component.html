@@ -1,0 +1,16 @@
+<div style="text-align:center">
+  <h1>
+      {{ title }}
+  </h1>
+</div>
+<pre>Data Obtained is: {{ data | json }}</pre>
+<div class="container">
+  <h1> Form</h1>
+  <div class="form-group">
+      <label>Title:
+          <input type="text" [formControl]="title_new">
+      </label>
+      <button (click)="save()">Save</button>
+  </div>
+          
+</div>

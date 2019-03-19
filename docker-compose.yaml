@@ -1,0 +1,24 @@
+version: '3.7'
+
+services:
+  django_application:
+    build: ./django_app
+    volumes:
+        - ./django_app/:/code/src/django_app/
+        - static_volume:/code/src/django_app/staticfiles
+    expose:
+        - 8000
+    env_file:
+        - environment_files/local.env  
+  webapp:
+    build: ./angular-form
+    volumes:
+        - static_volume:/code/src/django_app/staticfiles
+        - ./angular-form/:/code/src/webapp/
+    ports: 
+        - 80:80
+    depends_on:
+        - django_application
+volumes:
+  static_volume:
+

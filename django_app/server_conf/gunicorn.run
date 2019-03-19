@@ -1,0 +1,17 @@
+#!/bin/sh
+NAME="django_app"
+PROJECT_DIR="/code/src/django_app/"
+NUM_WORKERS=3
+PROJECT_SETTINGS=${DJANGO_ENVIRONMENT}
+PROJECT_WSGI=app_api.wsgi
+echo "Starting $NAME as `whoami`"
+
+# Start beagle Unicorn
+# Programs meant to be run under supervisor should not daemonize themselves ( don not use --deamon)
+
+cd ${PROJECT_DIR}
+exec gunicorn ${PROJECT_WSGI}:application \
+   --env DJANGO_SETTINGS_MODULE=$PROJECT_SETTINGS \
+   --name $NAME \
+   --workers $NUM_WORKERS \
+   --bind=0.0.0.0:8000 
