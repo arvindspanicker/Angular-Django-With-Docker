@@ -14,7 +14,7 @@ WORKDIR /code/src/django_app/
 # install dependencies
 COPY requirements.txt /code/src/django_app/
 RUN apt-get update -y \
-  && apt-get install -y python3-pip python3-dev \
+  && apt-get install -y python3-pip python3-dev redis-server \
   && cd /usr/local/bin \
   && ln -s /usr/bin/python3 python \
   && pip3 install --upgrade pip 
@@ -24,6 +24,9 @@ RUN apt-get install -y supervisor
 RUN pip3 install --upgrade setuptools
 RUN pip3 install -r requirements.txt
 
+
+# Running redis
+RUN /usr/bin/redis-server
 
 # Setting sock file for supervisor 
 # RUN touch /var/run/supervisor.sock
