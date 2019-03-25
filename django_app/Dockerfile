@@ -25,10 +25,6 @@ RUN pip3 install --upgrade setuptools
 RUN pip3 install -r requirements.txt
 
 
-# Running redis
-RUN /usr/bin/redis-server --daemonize yes
-
-
 # Setting sock file for supervisor 
 # RUN touch /var/run/supervisor.sock
 # RUN chmod 777 /var/run/supervisor.sock
