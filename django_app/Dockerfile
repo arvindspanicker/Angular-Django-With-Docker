@@ -26,7 +26,8 @@ RUN pip3 install -r requirements.txt
 
 
 # Running redis
-RUN /usr/bin/redis-server
+RUN /usr/bin/redis-server --daemonize yes
+
 
 # Setting sock file for supervisor 
 # RUN touch /var/run/supervisor.sock
