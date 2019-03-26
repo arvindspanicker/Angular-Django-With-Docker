@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Make app level migration files
-python manage.py makemigrations api --settings=${DJANGO_ENVIRONMENT}
+python manage.py makemigrations testapp --settings=${DJANGO_ENVIRONMENT}
 python manage.py makemigrations --settings=${DJANGO_ENVIRONMENT}
 
 # Make database specific migrations
