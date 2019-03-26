@@ -11,7 +11,7 @@ export class OthersComponent implements OnInit {
 
   public title = 'Others Component';
   public config : any ;
-  public api_url :string = 'http://192.168.20.173/api/others/'
+  public api_url :string = 'http://192.168.20.173/api/testapp/v1/others/'
   public data : any;
   constructor(private configService: ConfigService) {}
 

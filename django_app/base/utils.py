@@ -13,15 +13,15 @@ def tenant_db_from_request(request):
         # remove this logic
         current_site = request.get_full_path()
         if 'api' in current_site:
-                current_site = current_site.split('/')[2]
-        elif 'test' in current_site:
-                current_site = current_site.split('/')[3]
-        logger.info(current_site)
+                current_site = current_site.split('/')[4]
+        logger.info('current_site '+current_site)
 
 
         database = 'default'
         for key,value in settings.TENANTS_WITH_DB_NAME.items():
                 if(current_site in key):
+                        logger.info('current_site '+current_site+ ' key '+ key)
                         database = settings.TENANTS_WITH_DB_NAME[key]
                         break
+        logger.info('database '+database)
         return database

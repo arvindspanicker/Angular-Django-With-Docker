@@ -11,7 +11,7 @@ export class AmazonComponent implements OnInit {
 
   public title = 'Amazon Component';
   public config : any ;
-  public api_url_for_data :string = 'http://192.168.20.173/api/amazon/'
+  public api_url_for_data :string = 'http://192.168.20.173/api/testapp/v1/amazon/'
   public data : any;
   constructor(private configService: ConfigService) {}
 

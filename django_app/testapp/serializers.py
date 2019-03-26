@@ -1,4 +1,4 @@
-from api.models import TestModel
+from testapp.models import TestModel
 
 from rest_framework import serializers
 

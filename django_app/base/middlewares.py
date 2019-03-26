@@ -19,6 +19,7 @@ class TenantMiddleware:
 
 
 def get_current_db_name():
+    logger.info(getattr(THREAD_LOCAL, "DB", None))
     return getattr(THREAD_LOCAL, "DB", None)
 
 

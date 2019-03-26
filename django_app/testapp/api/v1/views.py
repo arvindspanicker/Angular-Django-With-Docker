@@ -13,8 +13,8 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework import permissions
 from rest_framework.views import APIView
 
-from api.models import TestModel
-from api.serializers import TestSerializer
+from testapp.models import TestModel
+from testapp.serializers import TestSerializer
 
 logger = logging.getLogger(__name__)
 
